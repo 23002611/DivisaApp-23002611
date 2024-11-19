@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversor de Divisas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Conversión de Quetzales a Dólares</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Cantidad en Quetzales (Q):</ion-label>
+        <ion-input type="number" [(ngModel)]="quetzales" placeholder="Ingrese cantidad"></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="convertir()">Convertir</ion-button>
+      <ion-item *ngIf="resultado !== null">
+        <ion-label>Equivalente en Dólares ($):</ion-label>
+        <ion-text>{{ resultado | currency:'USD' }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
